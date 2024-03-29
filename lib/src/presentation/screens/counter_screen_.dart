@@ -49,6 +49,7 @@ class _CounterScreenState extends State<CounterScreen> {
               },
               child: const Icon(Icons.plus_one),
             ),
+            const SizedBox(height: 10),
              FloatingActionButton(
               onPressed: () {
                 if(_counter > 0) _counter--;
