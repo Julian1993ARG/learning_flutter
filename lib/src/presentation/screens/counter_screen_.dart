@@ -44,15 +44,23 @@ class _CounterScreenState extends State<CounterScreen> {
           children: [
             FloatingActionButton(
               onPressed: () {
+                _counter = 0;
+                setState(() {});
+              },
+              child: const Icon(Icons.refresh),
+            ),
+            const SizedBox(height: 10),
+            FloatingActionButton(
+              onPressed: () {
                 _counter++;
                 setState(() {});
               },
               child: const Icon(Icons.plus_one),
             ),
             const SizedBox(height: 10),
-             FloatingActionButton(
+            FloatingActionButton(
               onPressed: () {
-                if(_counter > 0) _counter--;
+                if (_counter > 0) _counter--;
                 setState(() {});
               },
               child: const Icon(Icons.exposure_minus_1),
