@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_word_app/src/widgets/custom_floating_buttom.dart';
 
 class CounterScreen extends StatefulWidget {
   const CounterScreen({super.key});
@@ -42,30 +43,22 @@ class _CounterScreenState extends State<CounterScreen> {
         floatingActionButton: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            FloatingActionButton(
-              onPressed: () {
-                _counter = 0;
-                setState(() {});
-              },
-              child: const Icon(Icons.refresh),
-            ),
-            const SizedBox(height: 10),
-            FloatingActionButton(
-              onPressed: () {
-                _counter++;
-                setState(() {});
-              },
-              child: const Icon(Icons.plus_one),
-            ),
-            const SizedBox(height: 10),
-            FloatingActionButton(
-              onPressed: () {
-                if (_counter > 0) _counter--;
-                setState(() {});
-              },
-              child: const Icon(Icons.exposure_minus_1),
-            )
+             CustomFloatingButtom(
+              onPressed: () => setState(() => _counter = 0),
+              icon: Icons.refresh
+              ),
+             const SizedBox(height: 10),
+            CustomFloatingButtom(
+              onPressed: () => setState(() => _counter++),
+              icon: Icons.plus_one
+              ),
+             const SizedBox(height: 10),
+             CustomFloatingButtom(
+              onPressed: () => setState(() => _counter > 0 ? _counter-- : null),
+              icon: Icons.exposure_minus_1
+              ),
           ],
         ));
   }
 }
+
